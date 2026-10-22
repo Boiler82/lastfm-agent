@@ -1,0 +1,4 @@
+nr,level,question,correct_answer,agent_answer,correct,seconds,full_reply
+11,hard,What is the biggest number of positions a track has dropped from one day to the next?,40,40,True,5.2,"The biggest number of positions a track has dropped from one day to the next is **40 positions**. This happened when ""Cleveland!"" by Taylor Swift dropped from position 7 to position 47 on October 5, 2026.
+
+FINAL: 40"

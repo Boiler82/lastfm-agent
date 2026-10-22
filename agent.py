@@ -208,7 +208,7 @@ TOOL_FUNCTIONS = {"run_sql": run_sql, "make_chart": make_chart}
 def get_schema() -> str:
     df = query_to_df(
         "SELECT table_schema || '.' || table_name AS table_name, column_name, data_type "
-        "FROM LASTFM.INFORMATION_SCHEMA.COLUMNS WHERE table_schema IN ('STAGING', 'MARTS') "
+        "FROM LASTFM.INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'STAGING' "
         "ORDER BY table_schema, table_name, ordinal_position"
     )
     lines = []
@@ -229,12 +229,13 @@ Notes about the data:
 - STAGING.STG_TOP_TRACKS is the full history: one row per track per daily snapshot of the global Top 50.
   LOADED_AT is when the snapshot was taken (one snapshot per day); use DATE(LOADED_AT) for the day.
 - CHART_POSITION 1 is the top of the chart and 50 the bottom. A lower number is better.
+- A DROP means the position number gets bigger, a CLIMB means it gets smaller.
+  Drop = CHART_POSITION - previous position (#10 -> #50 is a drop of 40).
+  Climb = previous position - CHART_POSITION (#30 -> #10 is a climb of 20).
 - A track is identified by TRACK_NAME and ARTIST_NAME together, never by the name alone.
 - To compare a track with the day before, join to the PREVIOUS DAY's snapshot (the latest earlier
   LOADED_AT), not just the track's previous appearance: a track missing from the previous day is a
   new entry or a re-entry, not a climb.
-- MARTS.FCT_CHART_DROPS only covers the most recent days (POSITIONS_DROPPED = CHART_POSITION - PREVIOUS_POSITION,
-  so a positive number means the track fell). For anything over a longer period, use the staging table.
 - Only the Top 50 is recorded: a track that leaves the chart has no data until it returns.
 - "Today" or "now" means the latest LOADED_AT in the data. Say which dates your answer covers.
 

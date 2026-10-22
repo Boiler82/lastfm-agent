@@ -1,0 +1,61 @@
+nr,level,question,correct_answer,agent_answer,correct,seconds,full_reply
+1,easy,How many daily chart snapshots are in the data?,24,24,True,5.4,"The data has 24 daily chart snapshots. They run from 2026-09-28 to 2026-10-21, with one snapshot per day. The count of distinct days and the count of distinct load timestamps are both 24.
+
+FINAL: 24"
+2,easy,How many different artists have appeared in the Top 50?,35,35,True,4.1,"35 different artists have appeared in the Top 50. This covers every daily snapshot from 2026-09-28 to 2026-10-21. I counted artists by name. Trimming spaces and ignoring upper or lower case gives the same count, so spelling variants aren't inflating it.
+
+FINAL: 35"
+3,easy,How many different tracks have appeared in the Top 50?,81,81,True,5.3,"The Top 50 history has **81 different tracks**. I counted each unique track name and artist pair once, because a track is identified by both together.
+
+The data covers 24 daily snapshots, from 2026-09-28 to 2026-10-21.
+
+FINAL: 81"
+4,easy,Which track is #1 in the latest chart? Give the track name.,NICOLE KIDMAN,NICOLE KIDMAN,True,3.5,"The #1 track in the latest chart is ""NICOLE KIDMAN"" by ADÉLA. The latest snapshot was loaded on 2026-10-21.
+
+FINAL: NICOLE KIDMAN"
+5,easy,What is the best (highest) chart position that SUNGLASSES by Tinashe has reached?,10,10,True,3.9,"""Sunglasses"" by Tinashe reached a best chart position of #10. The data covers 16 daily snapshots, from 2026-10-01 to 2026-10-16. I matched the track on both track name and artist name.
+
+FINAL: 10"
+6,medium,Which artist has the most tracks in the latest chart?,Olivia Rodrigo,Olivia Rodrigo,True,4.0,"In the latest chart (snapshot of 2026-10-21), Olivia Rodrigo has the most tracks, with 12 of the Top 50. Slayyyter is next with 4.
+
+FINAL: Olivia Rodrigo"
+7,medium,Which artist has had the most different tracks in the Top 50 over the whole period?,Tinashe,Tinashe,True,4.9,"Tinashe has had the most different tracks in the Top 50. She had 14 distinct tracks, counted by unique track name per artist. That covers the 24 daily snapshots from 2026-09-28 to 2026-10-21.
+
+Olivia Rodrigo is second with 12 tracks, followed by Slayyyter with 7.
+
+FINAL: Tinashe"
+8,medium,How many tracks have been in the Top 50 on every single day of the data?,29,29,True,6.0,"29 tracks were in the Top 50 on every day in the data. The data covers 24 daily snapshots, from 2026-09-28 to 2026-10-21, with no missing days. I identified each track by its name and artist together, and counted the tracks that appear in all 24 snapshots.
+
+FINAL: 29"
+9,medium,"Among tracks that were in the chart on at least 10 days, which track has the second-best average chart position? Give the track name.",Ain't In LA,Ain't In LA,True,5.0,"The track with the second-best average chart position is **Ain't In LA** by ADÉLA. I only counted tracks that appeared in the Top 50 on at least 10 days. Average position is the mean of a track's daily chart positions, and a lower number is better.
+
+The top of the ranking, using snapshots from 2026-09-28 to 2026-10-21:
+
+| Rank | Track | Artist | Days in chart | Average position |
+|---|---|---|---|---|
+| 1 | NICOLE KIDMAN | ADÉLA | 24 | 1.00 |
+| 2 | Ain't In LA | ADÉLA | 24 | 2.00 |
+| 3 | the cure | Olivia Rodrigo | 24 | 3.04 |
+
+Both ADÉLA tracks were in the chart on all 24 days. NICOLE KIDMAN held #1 every day and Ain't In LA held #2 every day.
+
+FINAL: Ain't In LA"
+10,hard,What is the biggest number of positions a track has climbed from one day to the next?,20,20,True,5.4,"The biggest one-day climb was 20 positions. ""SUNGLASSES"" by Tinashe went from #43 on 2026-10-01 to #23 on 2026-10-02.
+
+I only counted tracks that were on the chart on both consecutive days. A track that wasn't on the previous day's chart is a new entry or a re-entry, not a climb.
+
+FINAL: 20"
+11,hard,What is the biggest number of positions a track has dropped from one day to the next?,40,40,True,17.6,"The biggest one-day drop was **40 positions**. ""Cleveland!"" by Taylor Swift went from #7 on 2026-10-04 to #47 on 2026-10-05.
+
+I only counted tracks that were on the chart on both consecutive daily snapshots. A track that was missing the day before is a new entry or re-entry, not a drop. The next biggest drop was only 12 positions, so this one is a clear outlier.
+
+FINAL: 40"
+12,hard,How many tracks in the latest chart were not in the chart the day before (new entries or re-entries)?,2,2,True,7.1,"Two tracks in the latest chart (2026-10-21) weren't in the chart the day before (2026-10-20). Each is either a new entry or a re-entry. The latest chart has 50 tracks, and I matched tracks on track name and artist together.
+
+FINAL: 2"
+13,tricky,How many times has a track come back into the Top 50 after having dropped out (a re-entry)? Count every return.,14,14,True,9.0,"Across the snapshots from 2026-09-28 to 2026-10-21 (24 daily snapshots), there were 14 re-entries. I counted a re-entry each time a track was in the Top 50 on a given day, was missing from the previous day's snapshot, and had been on the chart on an earlier day. A track that left and came back more than once is counted once for each return. I identified tracks by track name and artist together.
+
+FINAL: 14"
+14,tricky,What percentage of the latest chart belongs to the artist with the most tracks in it? Round to 1 decimal.,24.0,24.0,True,4.2,"In the latest chart (snapshot of 2026-10-21), Olivia Rodrigo has the most tracks. She has 12 of the 50 entries, which is 24.0% of the chart.
+
+FINAL: 24.0"

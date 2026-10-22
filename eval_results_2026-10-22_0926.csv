@@ -1,0 +1,35 @@
+nr,level,question,correct_answer,agent_answer,correct,seconds,full_reply
+1,easy,How many daily chart snapshots are in the data?,24,24,True,4.6,FINAL: 24
+2,easy,How many different artists have appeared in the Top 50?,35,35,True,2.3,FINAL: 35
+3,easy,How many different tracks have appeared in the Top 50?,81,81,True,2.5,FINAL: 81
+4,easy,Which track is #1 in the latest chart? Give the track name.,NICOLE KIDMAN,NICOLE KIDMAN,True,3.0,"The track at #1 in the latest chart (October 21, 2026) is ""NICOLE KIDMAN"" by ADÉLA.
+
+FINAL: NICOLE KIDMAN"
+5,easy,What is the best (highest) chart position that SUNGLASSES by Tinashe has reached?,10,10,True,3.7,"The best (highest) chart position that ""SUNGLASSES"" by Tinashe has reached is position 10 on the Last.fm global Top 50.
+
+FINAL: 10"
+6,medium,Which artist has the most tracks in the latest chart?,Olivia Rodrigo,Olivia Rodrigo,True,3.2,"Based on the latest chart snapshot in the data, Olivia Rodrigo has the most tracks with 12 tracks in the Top 50.
+
+FINAL: Olivia Rodrigo"
+7,medium,Which artist has had the most different tracks in the Top 50 over the whole period?,Tinashe,Tinashe,True,2.8,"The artist with the most different tracks in the Top 50 over the whole period is **Tinashe** with 14 different tracks.
+
+FINAL: Tinashe"
+8,medium,How many tracks have been in the Top 50 on every single day of the data?,29,29,True,6.9,"Based on my analysis of the data from September 28, 2026 to October 21, 2026 (24 days total), there are **29 tracks** that have appeared in the Top 50 on every single day of the dataset.
+
+FINAL: 29"
+9,medium,"Among tracks that were in the chart on at least 10 days, which track has the second-best average chart position? Give the track name.",Ain't In LA,Ain't In LA,True,3.7,"The track with the second-best average chart position among tracks that appeared on the chart for at least 10 days is **""Ain't In LA""** by ADÉLA, with an average position of 2.0 across 24 days on the chart.
+
+FINAL: Ain't In LA"
+10,hard,What is the biggest number of positions a track has climbed from one day to the next?,20,20,True,7.2,"The biggest number of positions a track has climbed from one day to the next is **20 positions**. This was achieved by ""SUNGLASSES"" by Tinashe, which climbed from position 43 on October 1st to position 23 on October 2nd, 2026.
+
+FINAL: 20"
+11,hard,What is the biggest number of positions a track has dropped from one day to the next?,40,12,False,2.5,"The biggest number of positions a track has dropped from one day to the next is **12 positions**.
+
+FINAL: 12"
+12,hard,How many tracks in the latest chart were not in the chart the day before (new entries or re-entries)?,2,2,True,13.3,"Perfect. Comparing the charts from October 21, 2026 (latest) to October 20, 2026 (day before), there are 2 tracks that were not in the chart the day before: ""Housewife"" by Tate McRae and ""Where Is Gone?"" by Fontaines D.C.
+
+FINAL: 2"
+13,tricky,How many times has a track come back into the Top 50 after having dropped out (a re-entry)? Count every return.,14,14,True,4.4,FINAL: 14
+14,tricky,What percentage of the latest chart belongs to the artist with the most tracks in it? Round to 1 decimal.,24.0,24.0,True,4.3,"The artist with the most tracks in the latest chart is **Olivia Rodrigo** with 12 tracks out of 50, which equals **24.0%**.
+
+FINAL: 24.0"
