@@ -1,0 +1,5 @@
+anthropic
+snowflake-connector-python
+pandas
+matplotlib
+python-dotenv
