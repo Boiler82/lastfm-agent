@@ -9,6 +9,7 @@ Run only question 3:      python evaluate.py 3
 Use another model:        AGENT_MODEL=claude-haiku-4-5-20251001 python evaluate.py
 """
 
+import os
 import re
 import sys
 import time
@@ -105,7 +106,8 @@ def main():
     print(results.groupby("level", sort=False)["correct"].agg(["sum", "count"])
                  .rename(columns={"sum": "correct", "count": "questions"}))
 
-    filename = f"eval_results_{datetime.now():%Y-%m-%d_%H%M}.csv"
+    os.makedirs("results", exist_ok=True)
+    filename = f"results/eval_results_{datetime.now():%Y-%m-%d_%H%M}.csv"
     results.to_csv(filename, index=False)
     print(f"\nFull results saved to {filename}")
 
