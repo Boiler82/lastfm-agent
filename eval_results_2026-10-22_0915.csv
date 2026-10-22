@@ -1,0 +1,4 @@
+nr,level,question,correct_answer,agent_answer,correct,seconds,full_reply
+1,easy,How many daily chart snapshots are in the data?,24,24,True,7.3,"The data has 24 daily chart snapshots. They run from 2026-09-28 to 2026-10-21. There are 24 distinct snapshot timestamps and 24 distinct calendar days, so each day has exactly one snapshot.
+
+FINAL: 24"
