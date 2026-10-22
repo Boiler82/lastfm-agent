@@ -7,6 +7,7 @@ in text or with a chart. Follow-up questions remember the conversation.
 Run:  python agent.py
 """
 
+import atexit 
 import os
 import re
 import subprocess
@@ -52,10 +53,12 @@ def get_connection():
             database="LASTFM",
             private_key_file=os.environ["SNOWFLAKE_PRIVATE_KEY_PATH"],
             session_parameters={"STATEMENT_TIMEOUT_IN_SECONDS": 30},  # no runaway queries
+            enable_server_session_keep_alive_auto_detection=False,    # always log out cleanly
         )
         if os.getenv("SNOWFLAKE_PRIVATE_KEY_PASSPHRASE"):
             params["private_key_file_pwd"] = os.environ["SNOWFLAKE_PRIVATE_KEY_PASSPHRASE"]
         _conn = snowflake.connector.connect(**params)
+        atexit.register(_conn.close)   # log out of Snowflake when the program ends
     return _conn
 
 
